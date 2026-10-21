@@ -59,8 +59,8 @@ function FolderLink({
 			className={({ isActive }) =>
 				`flex items-center gap-3 py-2 px-3 rounded-md text-sm transition-colors ${
 					isActive
-						? "bg-kumo-fill font-semibold text-kumo-default"
-						: "text-kumo-strong hover:bg-kumo-tint"
+						? "bg-emerald-100 font-semibold text-emerald-900" // Warna menu aktif (Hijau Emerald)
+						: "text-kumo-strong hover:bg-emerald-50" // Warna saat kursor diarahkan (Hijau muda)
 				}`
 			}
 		>
@@ -121,7 +121,8 @@ export default function Sidebar() {
 	};
 
 	return (
-		<aside className="h-full w-64 bg-kumo-recessed flex flex-col shrink-0 border-r border-kumo-line">
+		// Mengubah bg-kumo-recessed menjadi bg-emerald-50/50 (Hijau sangat muda transparan)
+		<aside className="h-full w-64 bg-emerald-50/50 flex flex-col shrink-0 border-r border-emerald-200">
 			{/* Back + identity */}
 			<div className="px-4 pt-4 pb-1">
 				<button
@@ -130,16 +131,16 @@ export default function Sidebar() {
 						navigate("/");
 						closeSidebar();
 					}}
-					className="flex items-center gap-1.5 text-kumo-subtle text-sm hover:text-kumo-default transition-colors mb-2.5 cursor-pointer bg-transparent border-0 p-0"
+					className="flex items-center gap-1.5 text-emerald-700 text-sm hover:text-emerald-900 transition-colors mb-2.5 cursor-pointer bg-transparent border-0 p-0"
 				>
 					<CaretLeftIcon size={14} />
 					<span>Portal Karyawan</span>
 				</button>
 				<div className="px-1">
-					<div className="text-base font-semibold text-kumo-default truncate">
+					<div className="text-base font-semibold text-emerald-950 truncate">
 						{displayName}
 					</div>
-					<div className="text-sm text-kumo-subtle truncate mt-0.5">
+					<div className="text-sm text-emerald-700 truncate mt-0.5">
 						{currentMailbox?.email || mailboxId}
 					</div>
 				</div>
@@ -151,7 +152,7 @@ export default function Sidebar() {
 					variant="primary"
 					icon={<PencilSimpleIcon size={16} />}
 					onClick={() => startCompose()}
-					className="w-full !bg-[#00A651] !text-white hover:!bg-[#008f45]"
+					className="w-full !bg-emerald-600 !text-white hover:!bg-emerald-700 shadow-sm"
 				>
 					Tulis Pesan
 				</Button>
@@ -174,7 +175,7 @@ export default function Sidebar() {
 				{customFolders.length > 0 && (
 					<div className="pt-5">
 						<div className="flex items-center justify-between px-3 mb-1.5">
-							<span className="text-xs uppercase tracking-wider font-semibold text-kumo-subtle">
+							<span className="text-xs uppercase tracking-wider font-semibold text-emerald-700">
 								Folders
 							</span>
 							<Tooltip content="New folder" asChild>
@@ -185,6 +186,7 @@ export default function Sidebar() {
 									icon={<PlusIcon size={16} />}
 									onClick={() => setIsCreateFolderOpen(true)}
 									aria-label="Create new folder"
+									className="text-emerald-700 hover:bg-emerald-100"
 								/>
 							</Tooltip>
 						</div>
@@ -205,7 +207,7 @@ export default function Sidebar() {
 				{customFolders.length === 0 && (
 					<div className="pt-5">
 						<div className="flex items-center justify-between px-3 mb-1.5">
-							<span className="text-xs uppercase tracking-wider font-semibold text-kumo-subtle">
+							<span className="text-xs uppercase tracking-wider font-semibold text-emerald-700">
 								Folders
 							</span>
 							<Tooltip content="New folder" asChild>
@@ -216,6 +218,7 @@ export default function Sidebar() {
 									icon={<PlusIcon size={16} />}
 									onClick={() => setIsCreateFolderOpen(true)}
 									aria-label="Create new folder"
+									className="text-emerald-700 hover:bg-emerald-100"
 								/>
 							</Tooltip>
 						</div>
@@ -229,7 +232,7 @@ export default function Sidebar() {
 				onOpenChange={setIsCreateFolderOpen}
 			>
 				<Dialog size="sm" className="p-6">
-					<Dialog.Title className="text-base font-semibold mb-4">
+					<Dialog.Title className="text-base font-semibold mb-4 text-emerald-950">
 						Create folder
 					</Dialog.Title>
 					<form onSubmit={handleCreateFolder} className="space-y-4">
@@ -252,6 +255,7 @@ export default function Sidebar() {
 								type="submit"
 								variant="primary"
 								disabled={!newFolderName.trim()}
+								className="!bg-emerald-600 !text-white hover:!bg-emerald-700"
 							>
 								Create
 							</Button>
