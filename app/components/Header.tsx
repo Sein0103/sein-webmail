@@ -56,7 +56,8 @@ export default function Header() {
 	const isSettingsActive = location.pathname.includes("/settings");
 
 	return (
-		<header className="flex items-center gap-2 px-3 py-2.5 bg-kumo-base border-b border-kumo-line sticky top-0 z-10 md:px-5 md:gap-4">
+		{/* Header Utama dengan latar coklat transparan dan efek blur */}
+		<header className="flex items-center gap-2 px-3 py-2.5 bg-[rgba(245,245,220,0.5)] backdrop-blur-md border-b border-[rgba(230,220,195,1)] sticky top-0 z-10 md:px-5 md:gap-4">
 			{/* Hamburger menu - mobile only */}
 			<Button
 				variant="ghost"
@@ -75,8 +76,9 @@ export default function Header() {
 				}`}
 			>
 				<div className="flex-1 relative flex items-center">
+					{/* Input Pencarian dengan latar coklat transparan */}
 					<Input
-						className="w-full"
+						className="w-full !bg-[rgba(245,245,220,0.5)] !border-[rgba(230,220,195,1)] focus:!ring-emerald-500 rounded-lg"
 						aria-label="Search emails"
 						placeholder="Search emails... (try from:name, is:unread, has:attachment)"
 						value={searchQuery}
@@ -101,6 +103,7 @@ export default function Header() {
 						icon={<MagnifyingGlassIcon size={20} />}
 						onClick={performSearch}
 						aria-label="Search"
+						className="hover:bg-[rgba(230,220,195,1)] text-kumo-strong"
 					/>
 				</Tooltip>
 			</div>
@@ -114,7 +117,7 @@ export default function Header() {
 					icon={<MagnifyingGlassIcon size={20} />}
 					onClick={() => setIsSearchExpanded(true)}
 					aria-label="Search"
-					className="md:hidden shrink-0"
+					className="md:hidden shrink-0 hover:bg-[rgba(230,220,195,1)]"
 				/>
 			)}
 
@@ -126,7 +129,7 @@ export default function Header() {
 						icon={<RobotIcon size={20} />}
 						onClick={toggleAgentPanel}
 						aria-label="Toggle agent panel"
-						className="hidden lg:inline-flex"
+						className="hidden lg:inline-flex hover:bg-[rgba(230,220,195,1)]"
 					/>
 				</Tooltip>
 				<Tooltip content="Settings" side="bottom" asChild>
@@ -142,6 +145,7 @@ export default function Header() {
 							)
 						}
 						aria-label="Settings"
+						className="hover:bg-[rgba(230,220,195,1)]"
 					/>
 				</Tooltip>
 			</div>
