@@ -133,7 +133,7 @@ export default function Sidebar() {
 					className="flex items-center gap-1.5 text-kumo-subtle text-sm hover:text-kumo-default transition-colors mb-2.5 cursor-pointer bg-transparent border-0 p-0"
 				>
 					<CaretLeftIcon size={14} />
-					<span>Mailboxes</span>
+					<span>Portal Karyawan</span>
 				</button>
 				<div className="px-1">
 					<div className="text-base font-semibold text-kumo-default truncate">
@@ -151,9 +151,9 @@ export default function Sidebar() {
 					variant="primary"
 					icon={<PencilSimpleIcon size={16} />}
 					onClick={() => startCompose()}
-					className="w-full"
+					className="w-full !bg-[#00A651] !text-white hover:!bg-[#008f45]"
 				>
-					Compose
+					Tulis Pesan
 				</Button>
 			</div>
 
