@@ -135,6 +135,8 @@ export default function ComposeEmail() {
 								loading={isSending}
 								disabled={isSavingDraft || isSending}
 								icon={<PaperPlaneTiltIcon size={14} />}
+								className="!bg-emerald-600 !text-white hover:!bg-emerald-700"
+
 							>
 								{isSending ? "Sending..." : "Send"}
 							</Button>
