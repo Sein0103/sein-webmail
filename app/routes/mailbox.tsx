@@ -39,7 +39,7 @@ export default function MailboxRoute() {
 	}, [mailboxId, closeComposeModal, closePanel, closeSidebar]);
 
 	return (
-		<div className="flex h-screen overflow-hidden">
+		<div className="flex h-screen overflow-hidden bg-[rgba(245,245,220,0.5)]">
 			{/* Mobile sidebar overlay backdrop */}
 			{isSidebarOpen && (
 				<div
@@ -61,7 +61,7 @@ export default function MailboxRoute() {
 				<Sidebar />
 			</div>
 
-			{/* Main content - Diubah menjadi coklat transparan (beige) */}
+			{/* Main content - Warna coklat transparan (beige) */}
 			<div className="flex-1 flex flex-col min-w-0 bg-[rgba(245,245,220,0.5)] backdrop-blur-sm">
 				<Header />
 				<main className="flex-1 overflow-hidden">
@@ -69,7 +69,7 @@ export default function MailboxRoute() {
 				</main>
 			</div>
 
-			{/* Agent + MCP sidebar -- togglable on desktop - Diubah menjadi coklat transparan (beige) */}
+			{/* Agent + MCP sidebar -- togglable via Header Button */}
 			{isAgentPanelOpen && (
 				<div className="hidden lg:flex w-[380px] shrink-0 border-l border-[rgba(230,220,195,1)] flex-col bg-[rgba(245,245,220,0.5)] backdrop-blur-sm overflow-hidden">
 					<AgentSidebar />
