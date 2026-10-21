@@ -61,17 +61,17 @@ export default function MailboxRoute() {
 				<Sidebar />
 			</div>
 
-			{/* Main content */}
-			<div className="flex-1 flex flex-col min-w-0 bg-kumo-base">
+			{/* Main content - Diubah menjadi coklat transparan (beige) */}
+			<div className="flex-1 flex flex-col min-w-0 bg-[rgba(245,245,220,0.5)] backdrop-blur-sm">
 				<Header />
 				<main className="flex-1 overflow-hidden">
 					<Outlet />
 				</main>
 			</div>
 
-			{/* Agent + MCP sidebar -- togglable on desktop */}
+			{/* Agent + MCP sidebar -- togglable on desktop - Diubah menjadi coklat transparan (beige) */}
 			{isAgentPanelOpen && (
-				<div className="hidden lg:flex w-[380px] shrink-0 border-l border-kumo-line flex-col bg-kumo-base overflow-hidden">
+				<div className="hidden lg:flex w-[380px] shrink-0 border-l border-[rgba(230,220,195,1)] flex-col bg-[rgba(245,245,220,0.5)] backdrop-blur-sm overflow-hidden">
 					<AgentSidebar />
 				</div>
 			)}
